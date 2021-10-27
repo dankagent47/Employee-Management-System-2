@@ -38,14 +38,18 @@ namespace Employee_Management_System
             this.textDesignation = new System.Windows.Forms.Label();
             this.textDepartment = new System.Windows.Forms.Label();
             this.lblWageRate = new System.Windows.Forms.Label();
-            this.textWageRate = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.tWageRate = new System.Windows.Forms.TextBox();
+            this.tDesignation = new System.Windows.Forms.TextBox();
+            this.tEmail = new System.Windows.Forms.TextBox();
+            this.tContact = new System.Windows.Forms.TextBox();
+            this.tAddress = new System.Windows.Forms.TextBox();
+            this.tFullName = new System.Windows.Forms.TextBox();
+            this.tDepartment = new System.Windows.Forms.TextBox();
             this.btnApply = new System.Windows.Forms.Button();
+            this.tHoursWorked = new System.Windows.Forms.TextBox();
+            this.tWage = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textId
@@ -127,58 +131,58 @@ namespace Employee_Management_System
             this.lblWageRate.TabIndex = 8;
             this.lblWageRate.Text = "Wage Rate";
             // 
-            // textWageRate
+            // tWageRate
             // 
-            this.textWageRate.Location = new System.Drawing.Point(638, 222);
-            this.textWageRate.Name = "textWageRate";
-            this.textWageRate.Size = new System.Drawing.Size(283, 27);
-            this.textWageRate.TabIndex = 9;
+            this.tWageRate.Location = new System.Drawing.Point(638, 222);
+            this.tWageRate.Name = "tWageRate";
+            this.tWageRate.Size = new System.Drawing.Size(283, 27);
+            this.tWageRate.TabIndex = 9;
             // 
-            // textBox3
+            // tDesignation
             // 
-            this.textBox3.Location = new System.Drawing.Point(638, 106);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(283, 27);
-            this.textBox3.TabIndex = 10;
+            this.tDesignation.Location = new System.Drawing.Point(638, 106);
+            this.tDesignation.Name = "tDesignation";
+            this.tDesignation.Size = new System.Drawing.Size(283, 27);
+            this.tDesignation.TabIndex = 10;
             // 
-            // textBox4
+            // tEmail
             // 
-            this.textBox4.Location = new System.Drawing.Point(638, 51);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(283, 27);
-            this.textBox4.TabIndex = 11;
+            this.tEmail.Location = new System.Drawing.Point(638, 51);
+            this.tEmail.Name = "tEmail";
+            this.tEmail.Size = new System.Drawing.Size(283, 27);
+            this.tEmail.TabIndex = 11;
             // 
-            // textBox5
+            // tContact
             // 
-            this.textBox5.Location = new System.Drawing.Point(138, 229);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(283, 27);
-            this.textBox5.TabIndex = 12;
+            this.tContact.Location = new System.Drawing.Point(138, 229);
+            this.tContact.Name = "tContact";
+            this.tContact.Size = new System.Drawing.Size(283, 27);
+            this.tContact.TabIndex = 12;
             // 
-            // textBox6
+            // tAddress
             // 
-            this.textBox6.Location = new System.Drawing.Point(138, 162);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(283, 27);
-            this.textBox6.TabIndex = 13;
+            this.tAddress.Location = new System.Drawing.Point(138, 162);
+            this.tAddress.Name = "tAddress";
+            this.tAddress.Size = new System.Drawing.Size(283, 27);
+            this.tAddress.TabIndex = 13;
             // 
-            // textBox7
+            // tFullName
             // 
-            this.textBox7.Location = new System.Drawing.Point(138, 106);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(283, 27);
-            this.textBox7.TabIndex = 14;
+            this.tFullName.Location = new System.Drawing.Point(138, 106);
+            this.tFullName.Name = "tFullName";
+            this.tFullName.Size = new System.Drawing.Size(283, 27);
+            this.tFullName.TabIndex = 14;
             // 
-            // textBox8
+            // tDepartment
             // 
-            this.textBox8.Location = new System.Drawing.Point(638, 162);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(283, 27);
-            this.textBox8.TabIndex = 15;
+            this.tDepartment.Location = new System.Drawing.Point(638, 162);
+            this.tDepartment.Name = "tDepartment";
+            this.tDepartment.Size = new System.Drawing.Size(283, 27);
+            this.tDepartment.TabIndex = 15;
             // 
             // btnApply
             // 
-            this.btnApply.Location = new System.Drawing.Point(362, 337);
+            this.btnApply.Location = new System.Drawing.Point(409, 391);
             this.btnApply.Name = "btnApply";
             this.btnApply.Size = new System.Drawing.Size(177, 35);
             this.btnApply.TabIndex = 16;
@@ -186,19 +190,56 @@ namespace Employee_Management_System
             this.btnApply.UseVisualStyleBackColor = true;
             this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
             // 
+            // tHoursWorked
+            // 
+            this.tHoursWorked.Location = new System.Drawing.Point(638, 286);
+            this.tHoursWorked.Name = "tHoursWorked";
+            this.tHoursWorked.Size = new System.Drawing.Size(283, 27);
+            this.tHoursWorked.TabIndex = 17;
+            this.tHoursWorked.TextChanged += new System.EventHandler(this.textHoursWorked_TextChanged);
+            // 
+            // tWage
+            // 
+            this.tWage.Location = new System.Drawing.Point(138, 286);
+            this.tWage.Name = "tWage";
+            this.tWage.Size = new System.Drawing.Size(283, 27);
+            this.tWage.TabIndex = 18;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(516, 293);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(103, 20);
+            this.label2.TabIndex = 19;
+            this.label2.Text = "Hours Worked";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(36, 293);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(47, 20);
+            this.label3.TabIndex = 20;
+            this.label3.Text = "Wage";
+            // 
             // SearchForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(991, 601);
+            this.ClientSize = new System.Drawing.Size(991, 469);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.tWage);
+            this.Controls.Add(this.tHoursWorked);
             this.Controls.Add(this.btnApply);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textWageRate);
+            this.Controls.Add(this.tDepartment);
+            this.Controls.Add(this.tFullName);
+            this.Controls.Add(this.tAddress);
+            this.Controls.Add(this.tContact);
+            this.Controls.Add(this.tEmail);
+            this.Controls.Add(this.tDesignation);
+            this.Controls.Add(this.tWageRate);
             this.Controls.Add(this.lblWageRate);
             this.Controls.Add(this.textDepartment);
             this.Controls.Add(this.textDesignation);
@@ -226,13 +267,17 @@ namespace Employee_Management_System
         private System.Windows.Forms.Label textDesignation;
         private System.Windows.Forms.Label textDepartment;
         private System.Windows.Forms.Label lblWageRate;
-        private System.Windows.Forms.TextBox textWageRate;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox tWageRate;
+        private System.Windows.Forms.TextBox tDesignation;
+        private System.Windows.Forms.TextBox tEmail;
+        private System.Windows.Forms.TextBox tContact;
+        private System.Windows.Forms.TextBox tAddress;
+        private System.Windows.Forms.TextBox tFullName;
+        private System.Windows.Forms.TextBox tDepartment;
         private System.Windows.Forms.Button btnApply;
+        private System.Windows.Forms.TextBox tHoursWorked;
+        private System.Windows.Forms.TextBox tWage;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }

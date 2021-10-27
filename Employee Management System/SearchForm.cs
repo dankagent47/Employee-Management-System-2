@@ -24,17 +24,24 @@ namespace Employee_Management_System
         {
 
             EmployeeToMatch emp = new EmployeeToMatch();
-            emp.Id = textId.Text; emp.FullName = 
+              
             emp.Id = textId.Text;
-            emp.FullName = textFullName.Text;
-            emp.Address = textAddress.Text;
-            emp.Contact = textContact.Text;
-            emp.Email = textEmail.Text;
-            emp.Designation = textDesignation.Text;
-            emp.Department = textDepartment.Text;
-            emp.WageRate = textWageRate.Text;
+            emp.FullName = tFullName.Text;
+            emp.Address = tAddress.Text;
+            emp.Contact = tContact.Text;
+            emp.Email = tEmail.Text;
+            emp.Designation = tDesignation.Text;
+            emp.Department = tDepartment.Text;
+            emp.Wage = tWage.Text;
+            emp.HoursWorked = tHoursWorked.Text;
 
-            MainForm.employeeToMatch = emp;
+            MainForm.emp = emp;
+            this.Close();
+        }
+
+        private void textHoursWorked_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

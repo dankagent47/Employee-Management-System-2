@@ -12,7 +12,7 @@ namespace Employee_Management_System
 {
     public partial class MainForm : Form
     {
-        public static EmployeeToMatch employeeToMatch;
+        public static EmployeeToMatch emp;
         public DataView currentView;
         private DataTable datatable;
         private DataView standardView;
@@ -22,9 +22,10 @@ namespace Employee_Management_System
         public MainForm()
         {
             InitializeComponent();
-            datatable = new CSVtoDataTable.ReadCSV(filepath).readCSV;
+            datatable = new ReadCSV(filepath).readCSV;
             standardView = datatable.DefaultView;
             gridEmployees.DataSource = standardView;
+            currentView = standardView;
 
         }
 
@@ -32,27 +33,28 @@ namespace Employee_Management_System
         {
 
         }
-
-        /*
-        private void gridWorkers_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            gridEmployees.Rows[e.RowIndex].ReadOnly = true;
-
-            if (gridEmployees.Rows[e.RowIndex].Cells[e.ColumnIndex].Value == null)
-
-            {
-
-                gridEmployees.Rows[e.RowIndex].ReadOnly = isAdding ? false : true;
-
-            }
-        }
-        */
-
+           
         private void btnSpecificEmps_Click(object sender, EventArgs e)
         {
             var searchform = new SearchForm();
+
             searchform.ShowDialog();
 
+            List<string> allParams = new List<string>();
+            //here add fields you want to filter and their impact on rowview in string form
+
+            if (emp.Id != "") allParams.Add(String.Format("Id = {0}", emp.Id));
+            if (emp.FullName != "") allParams.Add(String.Format("FullName = '{0}'", emp.FullName));
+            if (emp.Address != "") allParams.Add(String.Format("Address = '{0}'", emp.Address));
+            if (emp.Designation != "") allParams.Add(String.Format("Designation = '{0}'", emp.Designation));
+            if (emp.Department != "") allParams.Add(String.Format("Department = '{0}'", emp.Department));
+            if (emp.HoursWorked != "") allParams.Add(String.Format("HoursWorked = '{0}'", emp.HoursWorked));
+            if (emp.Wage != "") allParams.Add(String.Format("Wage = '{0}'", emp.Wage));
+
+            string finalFilter = string.Join(" and ", allParams);
+            datatable.DefaultView.RowFilter = "(" + finalFilter + ")";
+            
+           
         }
 
         private bool isDeleting;
@@ -77,6 +79,18 @@ namespace Employee_Management_System
             if (!gridEmployees.ReadOnly) btnAddChangeEmps.Text = "Stop changing";
             else btnAddChangeEmps.Text = "Add/Change Employees' Data";
         }
+
+        private void btnAllEmps_Click(object sender, EventArgs e)
+        {
+            currentView.RowFilter = "";
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ReadCSV.ExportDatatableToCsv(filepath, datatable);
+        }
+
+
 
 
         /*
@@ -110,6 +124,7 @@ namespace Employee_Management_System
         public string Email { get; set; }
         public string Designation { get; set; }
         public string Department { get; set; }
-        public string WageRate { get; set; }
+        public string Wage { get; set; }
+        public string HoursWorked { get; set; }
     }
 }
