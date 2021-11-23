@@ -3,15 +3,31 @@ using System;
 using System.Data;
 using System.IO;
 using System.Linq;
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Employee_Management_System
 {
+    class ExportToFiles<T> where T : FileIO {
+        public List<string> files = new List<string> { };
+        public T file_writer;
+        public void Export(DataTable table)
+        {
+            foreach(var file in files)
+            {
+                file_writer.ExportDatatableToFile(file, table);
+            }
+        }
+    }
+
     abstract public class FileIO
     {
         public abstract string GetWriteableValueForFile(object obj);
@@ -19,8 +35,7 @@ namespace Employee_Management_System
         public abstract void ExportDatatableToFile(string filename, DataTable dt);
     }
 
-    
-    public class CSV_IO : FileIO
+        public class CSV_IO : FileIO
         {
             public DataTable readCSV;
 
@@ -351,7 +366,5 @@ namespace Employee_Management_System
             swFile.Close();
         }
     }
-
-
 
 }

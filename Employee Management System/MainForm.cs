@@ -16,6 +16,7 @@ namespace Employee_Management_System
         public DataView currentView;
         private DataTable datatable;
         private DataView standardView;
+        private ExportToFiles<CSV_IO> file_list = new ExportToFiles<CSV_IO>();
 
         private string filepath = @"C:\Users\37544\source\repos\Employee Management System\Employee Management System\kirans.csv";
 
@@ -26,7 +27,9 @@ namespace Employee_Management_System
             standardView = datatable.DefaultView;
             gridEmployees.DataSource = standardView;
             currentView = standardView;
-
+            file_list.files = new List<string> { filepath };
+            file_list.file_writer = new CSV_IO(filepath);
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -87,7 +90,8 @@ namespace Employee_Management_System
 
         private void button1_Click(object sender, EventArgs e)
         {
-            (new CSV_IO(filepath)).ExportDatatableToFile(filepath, datatable);
+            //(new CSV_IO(filepath)).ExportDatatableToFile(filepath, datatable);
+            file_list.Export(datatable);
         }
 
 
