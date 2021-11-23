@@ -43,5 +43,10 @@ namespace Employee_Management_System
         {
 
         }
+
+        private void tWageRate_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

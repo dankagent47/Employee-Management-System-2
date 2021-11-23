@@ -22,7 +22,7 @@ namespace Employee_Management_System
         public MainForm()
         {
             InitializeComponent();
-            datatable = new ReadCSV(filepath).readCSV;
+            datatable = new CSV_IO(filepath).readCSV;
             standardView = datatable.DefaultView;
             gridEmployees.DataSource = standardView;
             currentView = standardView;
@@ -87,7 +87,7 @@ namespace Employee_Management_System
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ReadCSV.ExportDatatableToCsv(filepath, datatable);
+            (new CSV_IO(filepath)).ExportDatatableToFile(filepath, datatable);
         }
 
 
@@ -127,4 +127,6 @@ namespace Employee_Management_System
         public string Wage { get; set; }
         public string HoursWorked { get; set; }
     }
+
+
 }

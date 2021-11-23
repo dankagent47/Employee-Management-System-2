@@ -137,6 +137,7 @@ namespace Employee_Management_System
             this.tWageRate.Name = "tWageRate";
             this.tWageRate.Size = new System.Drawing.Size(283, 27);
             this.tWageRate.TabIndex = 9;
+            this.tWageRate.TextChanged += new System.EventHandler(this.tWageRate_TextChanged);
             // 
             // tDesignation
             // 
